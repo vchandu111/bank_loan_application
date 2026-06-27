@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+openai
+langchain
+langchain-openai
+langchain-community
+langchain-core
+python-dotenv
+python-multipart
+aiofiles
