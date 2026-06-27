@@ -10,18 +10,18 @@ router = APIRouter(
 )
 
 @router.post("/apply")
-async def applyForLoan(
+def applyForLoan(
         name:str = Form(...),
         email:str = Form(...),
         income:float = Form(...),
         loan_amount:float = Form(...),
         loan_type:str = Form(...),
-        file:  UploadFile = File(...),
+        # file:  UploadFile = File(...),
         db: Session = Depends(get_db)
         ):
 
-        os.makedirs("uploads", exist_ok=True)
-        file_path = f'uploads/{file.filename}'
+        # os.makedirs("uploads", exist_ok=True)
+        # file_path = f'uploads/{file.filename}'
 
         new_application = LoanApplication(
                 name=name,
@@ -29,7 +29,6 @@ async def applyForLoan(
                 income=income,
                 loan_amount=loan_amount,
                 loan_type=loan_type,
-                document_path=file_path
         )
 
         db.add(new_application)

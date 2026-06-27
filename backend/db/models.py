@@ -10,4 +10,3 @@ class LoanApplication(Base):
         income=Column(Float)
         loan_amount=Column(Float)
         loan_type=Column(String)
-        document_path=Column(String, nullable=True)
